@@ -1,6 +1,10 @@
+import log as l
 a = complex(input('Введите комплексное число, например(1+1j): '))
+l.log(a)
 operation = input('Введите операцию: ')
+l.log(operation)
 b = complex(input('Введите комплексное число, например(1+1j): '))
+l.log(b)
 
 
 def complex_num(a, b, operation):
