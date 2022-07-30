@@ -1,13 +1,15 @@
 import menu
-import select
-import out
+import select as s
+
 import log as l
+from init_status import status_prog
+from end_prog import stop_prog
 
-menu.menu()
+while status_prog != False:
+    menu.menu()
+    s.click()
+    l.log(f'Ввод пользователем {s.text_from_user}')
+    menu.mn_select(s.text_from_user)
+    status_prog = stop_prog()
 
-cl = select.click()
-l.log(cl)
-res = menu.mn_select(cl)
-l.log(res)
-out.out_result(res)
-l.log(res)
+    
