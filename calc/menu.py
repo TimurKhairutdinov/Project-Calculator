@@ -19,7 +19,7 @@ def mn_select(cl):
             res = ration.r()
             status = True
         elif cl == '2':
-            res = complexn.c()
+            res = complexn.complex_new()
             status = True
         else:
             print(('Неккоректный ввод! Введите 1 или 2!\n'

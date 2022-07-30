@@ -5,7 +5,7 @@ import log as l
 
 menu.menu()
 
-cl =  select.click()
+cl = select.click()
 l.log(cl)
 res = menu.mn_select(cl)
 l.log(res)
