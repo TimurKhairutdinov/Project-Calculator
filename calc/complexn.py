@@ -1,11 +1,12 @@
 import log as l
-
+import vvod as v
 
 def complex_new():
+    v.vvod()
     print('Вычисление комплексных чисел.')
-    a = complex(input('Введите комплексное число, например(1+1j): '))
-    operation = input('Введите операцию: ')
-    b = complex(input('Введите комплексное число, например(1+1j): '))
+    a = complex(v.a)
+    operation = v.operation
+    b = complex(v.b)
     answer = 0
     def complex_num(a, b, operation):
         global answer
