@@ -21,7 +21,7 @@ def mn_select(cl):
             status = True
             return res
         elif cl == '2':
-            res = complexn.c()
+            res = complexn.complex_new()
             status = True
             return res
         elif cl == 'q' or cl == 'quit':
