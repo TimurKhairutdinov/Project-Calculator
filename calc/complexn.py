@@ -1,11 +1,23 @@
 import log as l
+a = complex(input('Введите комплексное число, например(1+1j): '))
+l.log(a)
+operation = input('Введите операцию: ')
+l.log(operation)
+b = complex(input('Введите комплексное число, например(1+1j): '))
+l.log(b)
 
 
-def c():
-    print('Вычисление комплексных чисел.')
-    a=int(input('Введите первое чиcло: '))
-    l.log(a)
-    b=int(input('Введите второе число: '))
-    l.log(b)
-    res = complex(a,b)
-    return res
+def complex_num(a, b, operation):
+    answer = 0
+    if operation == '+':
+        answer = a+b
+    elif operation == '-':
+        answer = a-b
+    elif operation == '*':
+        answer = a*b
+    elif operation == '/':
+        answer = a/b
+    return answer
+
+
+print(complex_num(a, b, operation))
