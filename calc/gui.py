@@ -5,5 +5,5 @@ import ration
 import complexn
 import main
 
-def vvod():
+# def vvod():
     
