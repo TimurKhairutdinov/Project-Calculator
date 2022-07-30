@@ -1,6 +1,5 @@
 
 
 def click():
-    global c 
-    c = str(input('>> '))
-    return c
+    global text_from_user
+    text_from_user = str(input('>> '))

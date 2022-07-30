@@ -1,34 +1,33 @@
-import complexn
-import ration
+import complexn as c
+import ration as r
 import log as l
+from init_status import status_prog
+import out as o
+
 
 def menu():
     print((
-        'Вас приветствует калькулятор!\n' 
+        'Вас приветствует калькулятор!\n'
         'Для работы с рациональными или комплексными числами выберите режим:\n'
         'Введите 1 или 2.\n'
         '1. Рациональные.\n'
         '2. Комплексные.\n'
-        '3. Для выхода введите q или quit\n'
         '------------------'
     ))
+
 
 def mn_select(cl):
     status = False
     while status != True:
         if cl == '1':
-            res = ration.r()
             status = True
-            return res
+            o.out_result(r.ration())
+
         elif cl == '2':
-            res = complexn.complex_new()
             status = True
-            return res
-        elif cl == 'q' or cl == 'quit':
-            l.log(f'Ввод {cl}: выход из программы.')
-            break
+            o.out_result(c.complex_new())
         else:
             print(('Неккоректный ввод! Введите 1 или 2!\n'
-                    '----------------------------------'))
+                   '----------------------------------'))
             cl = input()
-    
+            l.log(f'Ввод пользователем {cl}')

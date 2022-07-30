@@ -1,7 +1,7 @@
 from fractions import Fraction
 import log as l
 
-def r():
+def ration():
     print('Вычисление рациональных чисел.')
     a = Fraction(input('Введите вещественное число 1: '))
     operation = input('Введите операцию: ')
