@@ -12,5 +12,5 @@ def ration():
     b = Fraction(v.b)
     c.calc(a, b, operation)
     answer = c.answer
-    l.log(f'первое число - {a}, второе - {b}, операция - {operation}, результат - {answer} ')
+    l.loging(f'первое число - {a}, второе - {b}, операция - {operation}, результат - {answer} ')
     return answer
