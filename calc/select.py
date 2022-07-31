@@ -1,4 +1,4 @@
-
+text_from_user = ''
 
 def click():
     global text_from_user

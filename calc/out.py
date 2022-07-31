@@ -1,4 +1,5 @@
-
+import easygui as gui
 
 def out_result(res):
-    print(f'Результат выполнения = {res}')
+    gui.textbox(f'Результат выполнения = {res}')
+    # print(f'Результат выполнения = {res}')
