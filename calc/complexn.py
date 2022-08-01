@@ -11,5 +11,5 @@ def complex_new():
     b = complex(v.b)
     c.calc(a, b, operation)
     answer = c.answer
-    l.loging(f'первое число - {a}, второе - {b}, операция - {operation}, результат - {answer} ')
+    l.logger(f'первое число - {a}, второе - {b}, операция - {operation}, результат - {answer} ')
     return answer

@@ -1,9 +1,10 @@
 import datetime
 from gettext import find
 import users as us
+import easygui as gui
 
 
-def loging(text):
+def logger(text):
 
     now = datetime.datetime.now()
     with open('log.txt', 'a', encoding='utf-16') as log:
@@ -11,33 +12,38 @@ def loging(text):
 
 
 def view_log():
-    print(('Для доступа к log, необходимо иметь права администратора!\n'
-           'Введите логин: \n'))
-    login = str(input('>> '))
-    loging(f'Ввод пользователем login: {login}')
+    a = gui.buttonbox('Для доступа к log, необходимо иметь права администратора!',
+                      choices=['Войти'])
+    if a == 'Войти':
+        box = gui.multenterbox('Введите логи и пароль',
+                               fields=['Логин: ', 'Пароль: '])
+        login, password_from_user = box[0], box[1]
+    logger(f'Ввод пользователем login: {login}')
     find_user_status = False
     for i in us.user.keys():
         if login == i:
             find_user_status = True
-            loging(f'Пользователь: {login} найден.')
+            logger(f'Пользователь: {login} найден.')
 
     if find_user_status != False:
-        print('Введите пароль: \n')
-        password_from_user = str(input('>> '))
-        loging(f'Ввод пользователем password: {password_from_user}')
+        logger(f'Ввод пользователем password: {password_from_user}')
         password = us.user.get(login)
         if password_from_user == password:
-            loging(f'login: {login} password: {password_from_user} Complete!')
-            print(('Доступ открыт.\n'
-                   '________________\n'))
-            with open('log.txt', 'r',encoding='utf-16') as log:
-                r = log.readlines()
-                for line in r:
-                    print(line)
-            loging(f'Пользователь {login} получил доступ к log')
+            log_in(login, password_from_user)
         else:
-            loging(f'Пользователь {login} не получил доступ к log, неверный password:{password_from_user}')
-            print('Доступ закрыт!')
+            logger(
+                f'Пользователь {login} не получил доступ к log, неверный password:{password_from_user}')
+            a = gui.buttonbox(f'Неправильный пароль {password_from_user}',
+                              choices=['ок'])
     else:
-        print('Пользователь не найден.')
-        loging(f'Пользователь: {login} не найден.')
+        a = gui.buttonbox('Пользователь не найден',
+                          choices=['ок'])
+        logger(f'Пользователь: {login} не найден.')
+
+
+def log_in(login, password_from_user):
+        logger(f'login: {login} password: {password_from_user} Complete!')
+        with open('log.txt', 'r', encoding='utf-16') as log:
+                r = log.readlines()
+                a = gui.buttonbox(f'{r}',choices=['ок'])
+        logger(f'Пользователь {login} получил доступ к log')

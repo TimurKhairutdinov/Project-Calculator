@@ -7,7 +7,7 @@ from init_status import status_prog
 
 while status_prog:
     menu.menu()
-    l.loging(f'Ввод пользователем {s.text_from_user}')
+    l.logger(f'Ввод пользователем {s.text_from_user}')
     status_prog = menu.stop_prog()
 
 
