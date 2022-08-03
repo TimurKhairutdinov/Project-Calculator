@@ -6,9 +6,8 @@ import vvod as v
 
 def ration():
     v.vvod()
-    print('Вычисление рациональных чисел.')
     a = Fraction(v.a)
-    operation = v.operation
+    operation = v.op
     b = Fraction(v.b)
     c.calc(a, b, operation)
     answer = c.answer
