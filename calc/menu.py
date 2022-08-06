@@ -21,7 +21,6 @@ def menu():
 def stop_prog():
     a = gui.ynbox('Вы хотите продолжить работу с калькулятором?',
                   choices=['Начать заново', 'Выход'])
-    print(a)
     if a:
         return True
     else:
